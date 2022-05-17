@@ -1,0 +1,53 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"add_llvm_tool"
+		],
+		"files" : 
+		[
+			"cmake/modules/AddLLVM.cmake",
+			"tools/split-file/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 5,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1246,
+				"parent" : 1
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "split-file",
+			"destination" : "bin",
+			"paths" : 
+			[
+				"bin/split-file"
+			],
+			"targetId" : "split-file::@5b47d0994098f8e39c31",
+			"targetIndex" : 1844,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "tools/split-file",
+		"source" : "tools/split-file"
+	}
+}

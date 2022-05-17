@@ -1,0 +1,771 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "unittests/Analysis/AnalysisTests"
+		}
+	],
+	"backtrace" : 5,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"add_llvm_executable",
+			"add_unittest",
+			"add_unittest_with_input_files",
+			"add_llvm_unittest_with_input_files",
+			"target_link_libraries",
+			"explicit_llvm_config",
+			"llvm_config",
+			"set_property",
+			"llvm_update_compile_flags",
+			"add_definitions",
+			"include",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"cmake/modules/AddLLVM.cmake",
+			"unittests/CMakeLists.txt",
+			"unittests/Analysis/CMakeLists.txt",
+			"cmake/modules/LLVM-Config.cmake",
+			"cmake/modules/HandleLLVMOptions.cmake",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 15,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 8,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 1513,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 1475,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 888,
+				"parent" : 4
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 937,
+				"parent" : 4
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 95,
+				"parent" : 6
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 107,
+				"parent" : 7
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 1496,
+				"parent" : 3
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 55,
+				"parent" : 0
+			},
+			{
+				"command" : 9,
+				"file" : 0,
+				"line" : 912,
+				"parent" : 4
+			},
+			{
+				"command" : 8,
+				"file" : 0,
+				"line" : 80,
+				"parent" : 11
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 11,
+				"file" : 5,
+				"line" : 718,
+				"parent" : 13
+			},
+			{
+				"file" : 4,
+				"parent" : 14
+			},
+			{
+				"command" : 10,
+				"file" : 4,
+				"line" : 63,
+				"parent" : 15
+			},
+			{
+				"command" : 10,
+				"file" : 4,
+				"line" : 907,
+				"parent" : 15
+			},
+			{
+				"command" : 10,
+				"file" : 4,
+				"line" : 908,
+				"parent" : 15
+			},
+			{
+				"command" : 10,
+				"file" : 4,
+				"line" : 909,
+				"parent" : 15
+			},
+			{
+				"command" : 12,
+				"file" : 5,
+				"line" : 952,
+				"parent" : 13
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " -fPIC -fvisibility-inlines-hidden -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-noexcept-type -Wnon-virtual-dtor -Wdelete-non-virtual-dtor -Wsuggest-override -Wstring-conversion -Wmisleading-indentation -index-store-path \"/Users/123456qwerty/Downloads/goron_apple-llvm-5.7/llvm/cmake-build-debug/IndexStore\" -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2"
+				},
+				{
+					"fragment" : " -Wno-variadic-macros -Wno-gnu-zero-variadic-macro-arguments -fno-exceptions -fno-rtti"
+				},
+				{
+					"backtrace" : 9,
+					"fragment" : "-Wno-suggest-override"
+				},
+				{
+					"fragment" : "-std=c++14"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 12,
+					"define" : "GTEST_HAS_RTTI=0"
+				},
+				{
+					"backtrace" : 16,
+					"define" : "_DEBUG"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_CONSTANT_MACROS"
+				},
+				{
+					"backtrace" : 18,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "__STDC_LIMIT_MACROS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"path" : "/Users/123456qwerty/Downloads/goron_apple-llvm-5.7/llvm/cmake-build-debug/unittests/Analysis"
+				},
+				{
+					"path" : "/Users/123456qwerty/Downloads/goron_apple-llvm-5.7/llvm/unittests/Analysis"
+				},
+				{
+					"backtrace" : 20,
+					"path" : "/Users/123456qwerty/Downloads/goron_apple-llvm-5.7/llvm/cmake-build-debug/include"
+				},
+				{
+					"backtrace" : 20,
+					"path" : "/Users/123456qwerty/Downloads/goron_apple-llvm-5.7/llvm/include"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "/Users/123456qwerty/Downloads/goron_apple-llvm-5.7/llvm/utils/unittest/googletest/include"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "/Users/123456qwerty/Downloads/goron_apple-llvm-5.7/llvm/utils/unittest/googlemock/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					5
+				],
+				"standard" : "14"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 8,
+			"id" : "LLVMBinaryFormat::@c9b0ef5de2116d71f170"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "LLVMBitReader::@b3ae57fb53631d19cf66"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "LLVMBitstreamReader::@95731b79b16df93229d4"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "LLVMTransformUtils::@485472be269d97170281"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "LLVMAnalysis::@a8ea8fd451b56fad3c5d"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "LLVMMC::@9597ad869864cf27958c"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "LLVMMCParser::@d8f04122018374db0703"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "LLVMObject::@642aa1c006d9cde9317d"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "LLVMRemarks::@6a63c042d04b6deafc56"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "LLVMDebugInfoCodeView::@841a9fddc0a02ad6b960"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "LLVMAsmParser::@bfe21dd4a58a6f8872f3"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "LLVMProfileData::@b9974079c57e2c563b37"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "LLVMTextAPI::@e4706a94ab4f7fb58b7f"
+		},
+		{
+			"backtrace" : 10,
+			"id" : "LLVMTestingSupport::@dc55656f24965783403b"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "gtest::@7b482da229522f2cdda6"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "gtest_main::@c7c09bc35a39fa14de4e"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "LLVMDemangle::@3c7ef39cff93a35ba752"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "LLVMSupport::@928d1708d80fe1f55e59"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "LLVMCore::@fbfd63cd06ffdf52319f"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "Tests"
+	},
+	"id" : "AnalysisTests::@674130b0e119d3f88fad",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-fPIC -fvisibility-inlines-hidden -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-noexcept-type -Wnon-virtual-dtor -Wdelete-non-virtual-dtor -Wsuggest-override -Wstring-conversion -Wmisleading-indentation -index-store-path \"/Users/123456qwerty/Downloads/goron_apple-llvm-5.7/llvm/cmake-build-debug/IndexStore\" -g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "../../lib/libLLVMAnalysis.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "../../lib/libLLVMAsmParser.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "../../lib/libLLVMCore.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "../../lib/libLLVMSupport.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "../../lib/libLLVMTransformUtils.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "../../lib/libLLVMSupport.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 9,
+				"fragment" : "../../lib/libgtest_main.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 9,
+				"fragment" : "../../lib/libgtest.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "../../lib/libLLVMTestingSupport.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "../../lib/libLLVMAnalysis.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../../lib/libLLVMObject.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../../lib/libLLVMBitReader.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../../lib/libLLVMMCParser.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../../lib/libLLVMMC.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../../lib/libLLVMDebugInfoCodeView.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../../lib/libLLVMTextAPI.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../../lib/libLLVMProfileData.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "../../lib/libLLVMCore.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../../lib/libLLVMBinaryFormat.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../../lib/libLLVMRemarks.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../../lib/libLLVMBitstreamReader.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 9,
+				"fragment" : "../../lib/libgtest.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "../../lib/libLLVMSupport.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lm",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/lib/libz.tbd",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/lib/libcurses.tbd",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../../lib/libLLVMDemangle.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "AnalysisTests",
+	"nameOnDisk" : "AnalysisTests",
+	"paths" : 
+	{
+		"build" : "unittests/Analysis",
+		"source" : "unittests/Analysis"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/AliasAnalysisTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/AliasSetTrackerTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/AssumeBundleQueriesTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/BasicAliasAnalysisTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/BlockFrequencyInfoTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/BranchProbabilityInfoTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/CallGraphTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/CaptureTrackingTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/CFGTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/CGSCCPassManagerTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/ConstraintSystemTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/DDGTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/DivergenceAnalysisTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/DomTreeUpdaterTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/GlobalsModRefTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/FunctionPropertiesAnalysisTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/InlineCostTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/IRSimilarityIdentifierTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/IVDescriptorsTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/LazyCallGraphTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/LoadsTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/LoopInfoTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/LoopNestTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/MemoryBuiltinsTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/MemorySSATest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/PhiValuesTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/ProfileSummaryInfoTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/ScalarEvolutionTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/VectorFunctionABITest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/SparsePropagation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/TargetLibraryInfoTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/TBAATest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/UnrollAnalyzerTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/ValueLatticeTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/ValueTrackingTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "unittests/Analysis/VectorUtilsTest.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

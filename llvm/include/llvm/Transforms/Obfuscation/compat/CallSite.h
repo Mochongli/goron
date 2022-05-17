@@ -762,6 +762,5 @@ class ImmutableCallSite : public CallSiteBase<> {
 
 }  // namespace llvm
 #pragma GCC diagnostic pop
-#endif
 
 #endif  // LLVM_IR_CALLSITE_H

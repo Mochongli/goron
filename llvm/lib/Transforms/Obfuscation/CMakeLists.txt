@@ -1,4 +1,4 @@
-add_llvm_component_library(LLVMObfuscation
+add_llvm_component_library(LLVMObfuscation # modify add_llvm_library to add_llvm_component_library
   CryptoUtils.cpp
   Utils.cpp
   ObfuscationPassManager.cpp

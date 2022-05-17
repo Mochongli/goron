@@ -6,7 +6,12 @@
 #include "llvm/IR/DebugInfo.h"
 #include "llvm/Support/Debug.h"
 
+#if LLVM_VERSION_MAJOR > 10
 #include "llvm/Transforms/Obfuscation/compat/CallSite.h"
+#else
+#include "llvm/IR/CallSite.h"
+#endif
+
 
 #define DEBUG_TYPE "ipobf"
 
@@ -92,10 +97,18 @@ Function *IPObfuscationContext::InsertSecretArgument(Function *F) {
   Type *RetTy = FTy->getReturnType();
 
   // The existing function return attributes.
+  #if LLVM_VERSION_MAJOR >= 13
   AttributeSet RAttrs = PAL.getRetAttrs();
+  #else
+  AttributeSet RAttrs = PAL.getRetAttributes();
+  #endif
 
   // Reconstruct the AttributesList based on the vector we constructed.
+  #if LLVM_VERSION_MAJOR >= 13
   AttributeList NewPAL = AttributeList::get(F->getContext(), PAL.getFnAttrs(), RAttrs, ArgAttrVec);
+  #else
+  AttributeList NewPAL = AttributeList::get(F->getContext(), PAL.getFnAttributes(), RAttrs, ArgAttrVec);
+  #endif
 
   // Create the new function type based on the recomputed parameters.
   FunctionType *NFTy = FunctionType::get(RetTy, Params, FTy->isVarArg());
@@ -132,19 +145,32 @@ Function *IPObfuscationContext::InsertSecretArgument(Function *F) {
     // original function, and add those that are still alive.
     for (unsigned e = FTy->getNumParams(); i != e; ++I, ++i) {
       Args.push_back(*I);
+      #if LLVM_VERSION_MAJOR >= 13
       AttributeSet Attrs = CallPAL.getParamAttrs(i);
+      #else
+      AttributeSet Attrs = CallPAL.getParamAttributes(i);
+      #endif
       ArgAttrVec.push_back(Attrs);
     }
 
     // Push any varargs arguments on the list. Don't forget their attributes.
     for (CallSite::arg_iterator E = CS.arg_end(); I != E; ++I, ++i) {
       Args.push_back(*I);
+      #if LLVM_VERSION_MAJOR >= 13
       ArgAttrVec.push_back(CallPAL.getParamAttrs(i));
+      #else
+      ArgAttrVec.push_back(CallPAL.getParamAttributes(i));
+      #endif
     }
 
     // Reconstruct the AttributesList based on the vector we constructed.
+    #if LLVM_VERSION_MAJOR >= 13
     AttributeList NewCallPAL =
         AttributeList::get(F->getContext(), CallPAL.getFnAttrs(), CallPAL.getRetAttrs(), ArgAttrVec);
+    #else
+    AttributeList NewCallPAL =
+        AttributeList::get(F->getContext(), CallPAL.getFnAttributes(), CallPAL.getRetAttributes(), ArgAttrVec);
+    #endif
 
     Instruction *New;
     if (InvokeInst *II = dyn_cast<InvokeInst>(Call)) {

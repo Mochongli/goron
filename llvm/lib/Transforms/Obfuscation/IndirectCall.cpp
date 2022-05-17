@@ -10,7 +10,11 @@
 #include "llvm/Transforms/Scalar.h"
 #include "llvm/Analysis/CFG.h"
 
+#if LLVM_VERSION_MAJOR > 10
 #include "llvm/Transforms/Obfuscation/compat/CallSite.h"
+#else
+#include "llvm/IR/CallSite.h"
+#endif
 
 #include <random>
 
@@ -156,17 +160,30 @@ struct IndirectCall : public FunctionPass {
 
       for (unsigned e = FTy->getNumParams(); i != e; ++I, ++i) {
         Args.push_back(*I);
+        #if LLVM_VERSION_MAJOR >= 13
         AttributeSet Attrs = CallPAL.getParamAttrs(i);
+        #else
+        AttributeSet Attrs = CallPAL.getParamAttributes(i);
+        #endif
         ArgAttrVec.push_back(Attrs);
       }
 
       for (CallSite::arg_iterator E = CS.arg_end(); I != E; ++I, ++i) {
         Args.push_back(*I);
+        #if LLVM_VERSION_MAJOR >= 13
         ArgAttrVec.push_back(CallPAL.getParamAttrs(i));
+        #else
+        ArgAttrVec.push_back(CallPAL.getParamAttributes(i));
+        #endif
       }
 
+      #if LLVM_VERSION_MAJOR >= 13
       AttributeList NewCallPAL = AttributeList::get(
           IRB.getContext(), CallPAL.getFnAttrs(), CallPAL.getRetAttrs(), ArgAttrVec);
+      #else
+      AttributeList NewCallPAL = AttributeList::get(
+          IRB.getContext(), CallPAL.getFnAttributes(), CallPAL.getRetAttributes(), ArgAttrVec);
+      #endif
 
       Value *Secret = IRB.CreateSub(X, MySecret);
       Value *DestAddr = IRB.CreateGEP(EncDestAddr, Secret);

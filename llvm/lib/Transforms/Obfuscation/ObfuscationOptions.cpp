@@ -48,7 +48,11 @@ static std::set<std::string> getStringList(yaml::Node *n) {
   if (yaml::SequenceNode *sn = dyn_cast<yaml::SequenceNode>(n)) {
     for (yaml::SequenceNode::iterator i = sn->begin(), e = sn->end();
          i != e; ++i) {
+      #if LLVM_VERSION_MAJOR >= 12 // I'm not sure which version.
       filter.insert(getNodeString(i).str());
+      #else
+      filter.insert(getNodeString(i));
+      #endif
     }
   }
   return filter;

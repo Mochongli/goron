@@ -17,13 +17,6 @@
 #ifndef COMPAT_LLVM_IR_CALLSITE_H
 #define COMPAT_LLVM_IR_CALLSITE_H
 
-#ifndef LLVM_VERSION_MAJOR
-#define LLVM_VERSION_MAJOR 10
-#endif
-
-#if LLVM_VERSION_MAJOR < 11
-#include "llvm/IR/CallSite.h"
-#else
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wshadow"
 //===- CallSite.h - Abstract Call & Invoke instrs ---------------*- C++ -*-===//
@@ -347,7 +340,11 @@ class CallSiteBase {
 
 
   unsigned getNumArgOperands() const {
+    #if LLVM_VERSION_MAJOR >= 14
     CALLSITE_DELEGATE_GETTER(arg_size());
+    #else
+    CALLSITE_DELEGATE_GETTER(getNumArgOperands());
+    #endif
   }
 
   ValTy* getArgOperand(unsigned i) const {

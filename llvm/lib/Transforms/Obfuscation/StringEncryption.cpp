@@ -136,7 +136,11 @@ bool StringEncryption::runOnModule(Module &M) {
         GlobalVariable *DecStatus = new GlobalVariable(
             M, Type::getInt32Ty(Ctx), false, GlobalValue::PrivateLinkage, Zero,
             "dec_status_" + Twine::utohexstr(Entry->ID) + GV.getName());
+        #if LLVM_VERSION_MAJOR > 10 // I'm not sure which version.
         DecGV->setAlignment(MaybeAlign(GV.getAlignment()));
+        #else
+        DecGV->setAlignment(GV.getAlignment());
+        #endif
         Entry->DecGV = DecGV;
         Entry->DecStatus = DecStatus;
         ConstantStringPool.push_back(Entry);
@@ -162,7 +166,11 @@ bool StringEncryption::runOnModule(Module &M) {
       GlobalVariable *DecGV = new GlobalVariable(
           M, EltType, false, GlobalValue::PrivateLinkage,
           Constant::getNullValue(EltType), "dec_" + GV->getName());
+      #if LLVM_VERSION_MAJOR > 10 // I'm not sure which version.
       DecGV->setAlignment(MaybeAlign(GV->getAlignment()));
+      #else
+      DecGV->setAlignment(GV->getAlignment());
+      #endif
       GlobalVariable *DecStatus = new GlobalVariable(
           M, Type::getInt32Ty(Ctx), false, GlobalValue::PrivateLinkage, Zero,
           "dec_status_" + GV->getName());
@@ -355,9 +363,15 @@ StringEncryption::buildInitFunction(Module *M,
 
   if (isObjCSelectorPtr(User->GV)) {
     // resolve selector
+    #if LLVM_VERSION_MAJOR >= 9
     Function *sel_registerName = (Function *)M->getOrInsertFunction(
         "sel_registerName",
         FunctionType::get(IRB.getInt8PtrTy(), {IRB.getInt8PtrTy()}, false)).getCallee();
+    #else
+    Function *sel_registerName = (Function *)M->getOrInsertFunction(
+        "sel_registerName",
+        FunctionType::get(IRB.getInt8PtrTy(), {IRB.getInt8PtrTy()}, false));
+    #endif
     Value *Selector = IRB.CreateCall(sel_registerName, {Init});
     IRB.CreateStore(Selector, User->DecGV);
   }

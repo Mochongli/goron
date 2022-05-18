@@ -182,7 +182,7 @@ struct IndirectCall : public FunctionPass {
           IRB.getContext(), CallPAL.getFnAttrs(), CallPAL.getRetAttrs(), ArgAttrVec);
       #else
       AttributeList NewCallPAL = AttributeList::get(
-          IRB.getContext(), CallPAL.getFnAttrs(), CallPAL.getRetAttributes(), ArgAttrVec);
+          IRB.getContext(), CallPAL.getFnAttributes(), CallPAL.getRetAttributes(), ArgAttrVec);
       #endif
 
       Value *Secret = IRB.CreateSub(X, MySecret);
